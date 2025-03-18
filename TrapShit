@@ -1,0 +1,147 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrapShit</title> <!-- Título de la página -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(240, 240, 240, 1);
+            text-align: center;
+        }
+        .navbar {
+            background-color: rgba(40, 40, 40, 0.9);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        /* Animación para el logo */
+        @keyframes rgbAnimation {
+            0% { color: red; }
+            25% { color: yellow; }
+            50% { color: green; }
+            75% { color: cyan; }
+            100% { color: magenta; }
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            flex-grow: 1;
+            text-align: left;
+            animation: rgbAnimation 5s infinite; /* Agregar la animación */
+        }
+
+        .navbar .buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .navbar button:hover {
+            background-color: rgba(200, 200, 200, 0.9);
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 100px 20px;
+            display: none;
+        }
+        #inicio {
+            display: block;
+        }
+        .content img, .content iframe {
+            max-width: 80%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: rgba(30, 30, 30, 0.9);
+        }
+        p {
+            color: rgba(50, 50, 50, 0.8);
+            font-size: 18px;
+        }
+        .bio {
+            max-width: 80%;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">TrapShit</div>
+        <div class="buttons">
+            <button onclick="mostrarSeccion('inicio')">Inicio</button>
+            <button onclick="mostrarSeccion('videos')">Videos</button>
+            <button onclick="mostrarSeccion('sorpresa')">Sorpresa</button>
+        </div>
+    </div>
+
+    <div id="inicio" class="section">
+        <h1>Bienvenido Metichon</h1>
+        <p>Esta es una página para perder el tiempo.</p>
+        <div class="content">
+            <img src="https://i.imgur.com/LeixTC5.png" alt="Imagen 1">
+            <div class="bio">
+                <h2>¿Quién fue King Von?</h2>
+                <p><strong>King Von</strong>, cuyo nombre real era <strong>Dayvon Daquan Bennett</strong>, fue un rapero y compositor estadounidense nacido el 9 de agosto de 1994 en Chicago, Illinois. Fue conocido por sus letras narrativas y su estilo distintivo en la escena del drill de Chicago.</p>
+                <p>Firmó con el sello <strong>Only the Family (OTF)</strong> de Lil Durk y ganó reconocimiento con temas como <em>"Crazy Story"</em> y <em>"Took Her to the O"</em>.</p>
+                <p>Lamentablemente, King Von falleció el 6 de noviembre de 2020 en un tiroteo en Atlanta, Georgia, tras un altercado con otro grupo. Su impacto en la música drill sigue siendo significativo, y su legado continúa a través de su música.</p>
+            </div>
+            <img src="https://i.imgur.com/ZCC4XlJ.png" alt="Imagen 2">
+            <div class="bio">
+                <h2>¿Por qué Kanye West es considerado nazi?</h2>
+                <p>El rapero <strong>Kanye West</strong> ha sido objeto de controversia debido a sus declaraciones y acciones, algunas de las cuales han sido interpretadas como antisemitas y pro-nazis.</p>
+                <p>En 2022, hizo comentarios elogiando a Adolf Hitler y los nazis en una entrevista con Alex Jones, lo que provocó una fuerte reacción de rechazo. También ha publicado contenido en redes sociales con mensajes antisemitas, lo que llevó a la suspensión de sus cuentas y la ruptura de contratos con empresas como Adidas y Balenciaga.</p>
+                <p>Sus declaraciones han sido ampliamente condenadas, pero no significa que él sea literalmente un nazi. Más bien, ha expresado ideas extremas y provocativas que han generado indignación.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="videos" class="section">
+        <h1>Videos</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iQ5WqkiEBl4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZUvnJs7lJv8" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="sorpresa" class="section">
+        <h1>¡Sorpresa!</h1>
+        <p>¡Encontraste una sección secreta! 🎉</p>
+        <img src="https://i.imgur.com/v8J5A9h.png" alt="Sorpresa">
+    </div>
+
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById('inicio').style.display = 'none';
+            document.getElementById('videos').style.display = 'none';
+            document.getElementById('sorpresa').style.display = 'none';
+            document.getElementById(seccion).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
